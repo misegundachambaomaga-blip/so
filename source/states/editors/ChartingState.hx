@@ -70,6 +70,24 @@ class ChartingState extends MusicBeatState implements PsychUIEventHandler.PsychU
 	[
 		['', "Nothing. Yep, that's right."], //Always leave this one empty pls
 		['Dadbattle Spotlight', "Used in Dad Battle,\nValue 1: 0/1 = ON/OFF,\n2 = Target Dad\n3 = Target BF"],
+		['KB_Alert', "Plays the alert animation with sound.\nSet Value1 to 2 for double alert, 3 for triple, \nand 4 for quadruple."],
+		['KB_AttackPrepare', "Prepares a sawblade before attacking. \nWill also call the alert event for you automatically! \n(Disable alert by setting value 1 to '0')"],
+		['KB_AttackFire', "Fires the sawblade. \nIf BF isn't dodging, will fuck 'em up.\nSet value1 to be the sound to play (for example:\n 'triple' will play 'hazard/attack-triple').\nLeave blank if you don't want different sound.\nSet value2 to '1' to make the saw instakill."],
+		['KB_Pincer', "PincerShit. \nValue1=PincerState\nDon't use this unless you know what you're doing."],
+		['KB_AlertDouble', "Plays the alert animation with sound. \nUses the Double Variant sound and sprite. \nv2.2 UPDATE: Recommended to use KB_Alert instead!!!"],
+		['streetTV state', "Use to control the TV's on QT's stage. \n0 = static\n1 = alert\n2 = instructions part 1\n3 = instructions part 2\n4 = watch out\n5 = BLabs moment \n6 = Glitch\n7 = Bluescreen\n8 = heart\n9 = incoming drop"],
+		['streetBG state', "Value 1 as 0 = Normal\nValue 1 as 1 = Glitch\nValue 1 as 2 = Bluescreen\n"],
+		['Gas Effect', "Does the gas effect seen in Censory-Overload.\nValue 1 settings:\n'burst'\n'burstFAST'\n'burstFASTER'"],
+		['Alarm Gradient', "Value 1 refers to which side\n('left' or 'right')\nValue 2 is for the alpha to fade to.\nOnly works if Flashing lights is allowed\nand Low Quality is disabled."],
+		['TerminationIntro', "Value 1 refers to which lane (from 0-3). \nSet Value 2 to 'player' to do the player's side."],
+		['TerminationOutro', "Value 1 refers to which lane. \n0-3 = opponent\n4-7 = player"],
+		['InterlopeEffect', "Same as ?????? \n:)"],
+		['newDodgeDuration', "Set Value 1 (float) to be the new Dodge Duration \n(if dodging is allowed)\n(Default Value: 0.222)"],
+		['newDodgeCooldown', "Set Value 1 (float) to be the new Dodge Cooldown \n(if dodging is allowed)\n(Default Value: 0.102)"],
+		['gfScared','Set to "true" if you want \nGF to start playing the scared animation.\nAny other value will set GF back to normal'],
+		['newLossMultiplier', "Set Value 1 to be the new Health Loss Multiplier (for missing notes)."],
+		['newHealthGainMultiplier', "Set Value 1 to be the new Health Gain Multiplier."],
+		['newDadDrainHealthValue', "Set Value 1 to be how much health BF loses \nwhen Dad (opponent) hits a note.\nSet value1 to 'skip' if you don't want to set a new value\nSet Value 2 to 'true' if you want sustain notes\nto deal damage. Set to\n'false' to disable sustain note damage.\n\nWarning: Only works on Hard difficulty or above!"],
 		['Hey!', "Plays the \"Hey!\" animation from Bopeebo,\nValue 1: BF = Only Boyfriend, GF = Only Girlfriend,\nSomething else = Both.\nValue 2: Custom animation duration,\nleave it blank for 0.6s"],
 		['Set GF Speed', "Sets GF head bopping speed,\nValue 1: 1 = Normal speed,\n2 = 1/2 speed, 4 = 1/4 speed etc.\nUsed on Fresh during the beatbox parts.\n\nWarning: Value must be integer!"],
 		['Philly Glow', "Exclusive to Week 3\nValue 1: 0/1/2 = OFF/ON/Reset Gradient\n \nNo, i won't add it to other weeks."],
@@ -82,8 +100,13 @@ class ChartingState extends MusicBeatState implements PsychUIEventHandler.PsychU
 		['Alt Idle Animation', "Sets a specified postfix after the idle animation name.\nYou can use this to trigger 'idle-alt' if you set\nValue 2 to -alt\n\nValue 1: Character to set (Dad, BF or GF)\nValue 2: New postfix (Leave it blank to disable)"],
 		['Screen Shake', "Value 1: Camera shake\nValue 2: HUD shake\n\nEvery value works as the following example: \"1, 0.05\".\nThe first number (1) is the duration.\nThe second number (0.05) is the intensity."],
 		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
+		['Change Character OPTIONAL', "Same as Change Character BUT doesn't do anything\nwhen low quality is enabled.\n\nValue 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
 		['Change Scroll Speed', "Value 1: Scroll Speed Multiplier (1 is default)\nValue 2: Time it takes to change fully in seconds."],
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
+		['??????', "Does stuff or something. \nI don't actually know lmao"],
+		['Rotating', "Makes note spin by 22.5 degrees every 2 steps\nif Value 1 is set to '1'.\n \nSet to '2' for every step instead.\nSet to '3' to reset."],
+		['TerminateEndEarly', "Don't use this please for the love of god\ncuz it'll break a lot of shit otherwise."],
+		['CessationTroll', "ONLY WORKS IN CESSATION! \nUsed for the 1/5 chance troll in Cessation. \nSet 'value2' to '1' to force this to always work."],
 		['Play Sound', "Value 1: Sound file name\nValue 2: Volume (Default: 1), ranges from 0 to 1"]
 	];
 	
